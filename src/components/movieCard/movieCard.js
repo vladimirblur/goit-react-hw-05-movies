@@ -1,19 +1,10 @@
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router";
 import PropTypes from "prop-types";
 import s from "./MovieCard.module.css";
 
 export default function MovieCard({ movie }) {
-  const navigate = useNavigate();
   return (
     <>
-      <button
-        className="button button__back"
-        type="button"
-        onClick={() => navigate(-1)}
-      >
-        Go back
-      </button>
       <article className={s.card}>
         <img
           className=""
