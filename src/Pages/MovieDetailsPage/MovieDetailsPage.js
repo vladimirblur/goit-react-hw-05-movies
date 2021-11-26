@@ -3,7 +3,6 @@ import { getMovieDetails } from "../../services/movieApi";
 import { useParams, Outlet } from "react-router";
 import MovieCard from "../../components/movieCard";
 import Section from "../../components/Section";
-import s from "./MovieDetailsPage.module.css";
 
 export default function MovieDetailsPage() {
   const params = useParams();

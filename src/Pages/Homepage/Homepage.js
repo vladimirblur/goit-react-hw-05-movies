@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { getTrendingMovies } from "../../services/movieApi";
 import MoviesList from "../../components/MoviesList";
 import Section from "../../components/Section";
-import { getTrendingMovies } from "../../services/movieApi";
-import s from "./Homepage.module.css";
 
 const Homepage = () => {
   const [trendings, setTrendings] = useState(null);

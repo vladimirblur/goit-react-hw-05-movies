@@ -2,12 +2,7 @@ import { Route, Routes } from "react-router";
 import { Suspense, lazy } from "react";
 import Header from "./components/Header/Header";
 import Container from "./components/Container";
-
-// import MovieDetailsPage from "./Pages/MovieDetailsPage";
-// import MoviesPage from "./Pages/MoviesPage";
-// import Reviews from "./components/Reviews";
 import "./App.css";
-import { getMovieCast } from "./services/movieApi";
 
 const Homepage = lazy(() =>
   import("./Pages/Homepage" /* webpackChunkName: "home-page" */)
@@ -51,5 +46,3 @@ function App() {
 }
 
 export default App;
-
-// getTrendingMovies().then((d) => console.log(d));

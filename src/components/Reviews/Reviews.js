@@ -7,11 +7,9 @@ export default function Reviews() {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
 
-  console.log(movieId);
   useEffect(() => {
     getMovieReview(movieId).then(({ results }) => setReviews(results));
   }, [movieId]);
-  console.log(reviews);
 
   return Boolean(reviews.length) ? (
     <ul className={s.reviews}>

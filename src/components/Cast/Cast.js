@@ -34,4 +34,3 @@ export default function Cast() {
     </>
   );
 }
-// https://image.tmdb.org/t/p/w185/

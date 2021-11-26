@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
+import PropTypes from "prop-types";
 import s from "./MovieCard.module.css";
 
 export default function MovieCard({ movie }) {
   const navigate = useNavigate();
-
   return (
     <>
-      <button type="button" onClick={() => navigate(-1)}>
+      <button
+        className="button button__back"
+        type="button"
+        onClick={() => navigate(-1)}
+      >
         Go back
       </button>
       <article className={s.card}>
@@ -38,17 +42,12 @@ export default function MovieCard({ movie }) {
         <p>Additional information:</p>
         <ul className={s.additionalLinks}>
           <li>
-            <Link className={s.additionalLink} to="cast">
+            <Link className={`links ${s.additionalLink}`} to="cast">
               Cast
             </Link>
           </li>
           <li>
-            <Link
-              to={{
-                pathname: `reviews`,
-                // state: { from },
-              }}
-            >
+            <Link className="links" to="reviews">
               Reviews
             </Link>
           </li>
@@ -57,3 +56,18 @@ export default function MovieCard({ movie }) {
     </>
   );
 }
+
+MovieCard.propTypes = {
+  movie: PropTypes.shape({
+    poster_path: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    release_date: PropTypes.string,
+    vote_average: PropTypes.number,
+    overview: PropTypes.string,
+    genres: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+      })
+    ),
+  }).isRequired,
+};
